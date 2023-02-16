@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import data from "./data";
+import campaign from "./campaign"
 import { Login, Voting, Admin } from "./pages";
 
 localStorage.setItem('users', JSON.stringify(data))
+localStorage.setItem('parties', JSON.stringify(campaign))
 function App() {
   const [pageToDisplay, setPageToDisplay] = useState('Login')
   const pageManager = (page) => {
