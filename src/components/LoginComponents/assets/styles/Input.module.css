@@ -5,6 +5,11 @@
 .input_container {
   width: 80%;
 }
-input {
+.input_container input {
   flex-grow: 1;
+  border: none;
+  border-radius: 10px;
+}
+.input_error {
+  background-color: rgb(255, 177, 168);
 }

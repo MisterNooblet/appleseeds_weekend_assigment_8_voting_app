@@ -17,7 +17,7 @@ const LoginForm = ({ callPageManager }) => {
     const handleLoginInput = (e, name) => {
         const value = e.target.value
         setLoginInput({ ...loginInput, [name]: value })
-        console.log(loginInput);
+        setLoginFailed(false)
     }
 
     const handleLoginButton = () => {
@@ -37,10 +37,10 @@ const LoginForm = ({ callPageManager }) => {
         <div className={styles.loginCard}>
             <img src={logoimg} alt='Logo'></img>
             <h1>Login:</h1>
-            {loginFailed && <h4 className={styles.error_msg}>Login Failed check your login details</h4>}
-            <Input type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} />
-            <Input type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} />
+            <Input type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={loginFailed} />
+            <Input type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} loginFailed={loginFailed} />
             <button onClick={handleLoginButton}>Login</button>
+            {loginFailed ? <h4 className={styles.error_msg}>Login Failed check your login details</h4> : undefined}
         </div>
     )
 }

@@ -1,12 +1,11 @@
 import React from 'react'
-import UserInfo from '../components/VotingComponents/UserInfo'
 import CardsContainer from '../components/VotingComponents/CardsContainer'
+import Wrapper from '../components/UtilityComponents/PageWrapperCol'
 const Voting = () => {
     return (
-        <>
+        <Wrapper>
             <CardsContainer />
-            <UserInfo />
-        </>
+        </Wrapper>
     )
 }
 
