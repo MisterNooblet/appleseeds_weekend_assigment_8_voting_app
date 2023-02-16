@@ -11,3 +11,6 @@ button {
   width: 80%;
   cursor: pointer;
 }
+.error_msg {
+  color: red;
+}
