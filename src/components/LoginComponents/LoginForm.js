@@ -10,7 +10,7 @@ const initialLoginState = {
     password: ''
 }
 
-const LoginForm = () => {
+const LoginForm = ({ callPageManager }) => {
     const [loginInput, setLoginInput] = useState(initialLoginState)
     const [loginFailed, setLoginFailed] = useState(false)
 
@@ -27,6 +27,7 @@ const LoginForm = () => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user))
             setLoginFailed(false)
+            callPageManager('Voting')
         } else {
             setLoginFailed(true)
         }
