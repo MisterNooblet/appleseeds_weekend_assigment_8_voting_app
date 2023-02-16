@@ -1,0 +1,10 @@
+.input_row {
+  display: flex;
+  width: 100%;
+}
+.input_container {
+  width: 80%;
+}
+input {
+  flex-grow: 1;
+}

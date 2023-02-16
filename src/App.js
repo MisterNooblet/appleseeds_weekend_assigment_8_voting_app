@@ -1,8 +1,11 @@
 import data from "./data";
+import { Login } from "./pages";
+
+localStorage.setItem('users', JSON.stringify(data))
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <Login />
     </div>
   );
 }

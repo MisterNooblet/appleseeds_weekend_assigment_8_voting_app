@@ -1,9 +1,13 @@
 import React from 'react'
+import LoginForm from '../components/LoginComponents/LoginForm'
+import Wrapper from '../components/UtilityComponents/PageWrapper'
 
-const login = () => {
+const Login = () => {
     return (
-        <div>login</div>
+        <Wrapper>
+            <LoginForm />
+        </Wrapper>
     )
 }
 
-export default login
+export default Login

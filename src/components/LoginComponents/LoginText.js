@@ -2,7 +2,9 @@ import React from 'react'
 
 const LoginText = () => {
   return (
-    <div>LoginText</div>
+    <div>
+      <h1></h1>
+    </div>
   )
 }
 

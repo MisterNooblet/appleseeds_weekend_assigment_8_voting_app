@@ -1,0 +1,12 @@
+.loginCard {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  border: none;
+  width: 80%;
+  cursor: pointer;
+}
