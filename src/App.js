@@ -10,20 +10,14 @@ function App() {
   const pageManager = (page) => {
     setPageToDisplay(page)
   }
-
-  switch (pageToDisplay) {
-    case 'Login':
-      return <Login pageManager={pageManager} />
-      break;
-    case 'Voting':
-      return <Voting pageManager={pageManager} />
-      break;
-    case 'Admin':
-      return <Admin pageManager={pageManager} />
-      break;
-    default:
-      return <Login pageManager={pageManager} />
-      break;
+  if (pageToDisplay === 'Login') {
+    return <Login pageManager={pageManager} />
+  } else if (pageToDisplay === 'Voting') {
+    return <Voting pageManager={pageManager} />
+  } else if (pageToDisplay === 'Admin') {
+    return <Admin pageManager={pageManager} />
+  } else {
+    return <Login pageManager={pageManager} />
   }
 }
 
