@@ -3,12 +3,13 @@ import styles from './assets/styles/Input.module.css'
 import { CiUser, CiLock } from 'react-icons/ci';
 
 
-const Input = ({ type, name }) => {
+const Input = ({ type, name, inputHandler, value }) => {
     return (
         <div className={styles.input_container}>
             <p>{name}</p>
             <div className={styles.input_row}>
-                <span>{name === 'Username' ? <CiUser /> : <CiLock />}</span><input type={type} id={name} name={name}></input>
+                <span>{name === 'email' ? <CiUser /> : <CiLock />}</span>
+                <input type={type} id={name} name={name} value={value} onChange={(e) => inputHandler(e, name)}></input>
             </div>
         </div>
 
