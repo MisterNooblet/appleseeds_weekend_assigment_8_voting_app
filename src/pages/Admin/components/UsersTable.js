@@ -17,9 +17,9 @@ const UsersTable = () => {
                 </div>
                 <div className={styles.divTableBody}>
                     {
-                        users.map(element => {
+                        users.map((element, idx) => {
                             return (
-                                <div className={styles.divTableRow}>
+                                <div key={idx} className={styles.divTableRow}>
                                     <div className={styles.divTableCell}>{element.name}</div>
                                     <div className={styles.divTableCell}>{element.email}</div>
                                     <div className={styles.divTableCell}>{element.voted ? <FcCheckmark /> : <FcHighPriority />}</div>
