@@ -15,6 +15,7 @@ const LSM = {
     logout() {
         const users = this.pull('users')
         const currentUser = this.pull('user')
+        // eslint-disable-next-line
         const result = users.map(element => element.name === currentUser.name ? { ...element, ['voted']: currentUser['voted'] } : element)
         this.push('users', result)
     }
