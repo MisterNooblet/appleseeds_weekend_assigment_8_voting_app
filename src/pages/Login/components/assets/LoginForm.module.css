@@ -1,14 +1,25 @@
 .loginCard {
-  background-color: aliceblue;
+  background-color: #4d455d;
+  color: #f5e9cf;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* border-radius: 20px; */
   height: 100vh;
   width: 100vw;
+  padding: 10vh 0;
 }
-
+.buttonbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
 .error_msg {
   color: red;
+}
+.loginCard h1,
+.loginCard h3 {
+  text-align: center;
 }
