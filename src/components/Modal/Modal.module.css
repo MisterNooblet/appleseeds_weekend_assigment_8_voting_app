@@ -8,6 +8,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  padding: 0 10vw;
 }
 .modal button {
   width: 80vw;
