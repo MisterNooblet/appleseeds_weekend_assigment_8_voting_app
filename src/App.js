@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import data from "./data/data";
 import campaign from "./data/campaign"
 import { Login, Voting, Admin } from "./pages";
+import LSM from "./data/LocalStorageManager";
 
-localStorage.setItem('users', JSON.stringify(data))
-localStorage.setItem('parties', JSON.stringify(campaign))
 function App() {
   const [pageToDisplay, setPageToDisplay] = useState('Login')
+  LSM.push('users', data)
+  LSM.push('parties', campaign)
   const pageManager = (page) => {
     setPageToDisplay(page)
   }

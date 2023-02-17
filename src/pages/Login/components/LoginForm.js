@@ -3,8 +3,8 @@ import styles from './assets/LoginForm.module.css'
 import logoimg from './assets/logo.png'
 import Input from './Input'
 import Button from '../../../components/Button/Button'
+import LSM from '../../../data/LocalStorageManager'
 
-const users = JSON.parse(localStorage.getItem('users'))
 
 const initialLoginState = {
     email: '',
@@ -14,6 +14,8 @@ const initialLoginState = {
 const LoginForm = ({ callPageManager }) => {
     const [loginInput, setLoginInput] = useState(initialLoginState)
     const [loginFailed, setLoginFailed] = useState(false)
+    const users = LSM.pull('users')
+
 
     const handleLoginInput = (e, name) => {
         const value = e.target.value
@@ -26,7 +28,7 @@ const LoginForm = ({ callPageManager }) => {
         const password = loginInput.password
         const user = users.find(element => element.email === username && element.password === password)
         if (user) {
-            localStorage.setItem('user', JSON.stringify(user))
+            LSM.push('user', user)
             setLoginFailed(false)
             callPageManager('Voting')
         } else {

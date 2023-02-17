@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import Card from './Card'
 import styles from './assets/styles/CardsContainer.module.css'
 
-const parties = JSON.parse(localStorage.getItem('parties'))
-const user = JSON.parse(localStorage.getItem('user'))
-const votesData = parties.reduce((a, b) => {
-    let name = b.name
-    a[name] = 0
-    return a
-}, {})
 const CardsContainer = () => {
+    const parties = JSON.parse(localStorage.getItem('parties'))
+    const user = JSON.parse(localStorage.getItem('user'))
+    const votesData = parties.reduce((a, b) => {
+        let name = b.name
+        a[name] = 0
+        return a
+    }, {})
     const [votes, setVotes] = useState(votesData)
     const voteHandler = (name) => {
         setVotes({ ...votes, [name]: (votes[`${name}`] + 1) })
