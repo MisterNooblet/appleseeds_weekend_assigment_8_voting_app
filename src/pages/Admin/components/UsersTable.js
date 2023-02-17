@@ -5,7 +5,7 @@ import { FcCheckmark, FcHighPriority } from 'react-icons/fc';
 const UsersTable = () => {
     const users = LSM.pull('users')
     return (
-        <div>
+        <div className={styles.table_container}>
 
             <div className={`${styles.divTable} ${styles.usertable}`}>
                 <div className={styles.divTableHeading} >

@@ -1,9 +1,13 @@
 .cards_container {
+  background-color: #4d455d;
+  color: #f5e9cf;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   /* border-radius: 20px; */
-  width: 80vw;
-  height: 100vh;
+  width: 100vw;
+}
+.cards_container img {
+  border-radius: 20px;
 }

@@ -1,9 +1,14 @@
 .modal {
+  background-color: #4d455d;
+  color: #f5e9cf;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
+}
+.modal button {
+  width: 80vw;
 }

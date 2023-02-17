@@ -69,10 +69,17 @@ const LoginForm = ({ callPageManager }) => {
         return (
             <div className={styles.loginCard}>
                 <img src={logoimg} alt='Logo'></img>
-                <h1>Login:</h1>
-                <Input type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={emailFailed} />
-                <Input type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} loginFailed={passwordFailed} />
-                <Button onClick={handleLoginButton} content='Login' />
+                <div>
+                    <h1>Welcome</h1>
+                    <h3>Please login to vote</h3>
+                </div>
+
+                <Input placeholder={'example@domain.com'} type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={emailFailed} />
+                <Input placeholder={'password'} type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} loginFailed={passwordFailed} />
+
+                <div className={styles.buttonbox}>
+                    <Button onClick={handleLoginButton} content='LOG IN' />
+                </div>
             </div>
         )
     }

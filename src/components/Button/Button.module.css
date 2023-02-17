@@ -1,5 +1,12 @@
 .button {
   border: none;
+  border: 1px solid black;
   width: 80%;
+  height: fit-content;
   cursor: pointer;
+  background-color: #7db9b6;
+  border-radius: 10px;
+  padding: 10px 0;
+  color: #4d455d;
+  font-weight: bold;
 }

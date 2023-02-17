@@ -1,3 +1,8 @@
+.table_container {
+  overflow: scroll;
+  max-height: 50vh;
+  color: black;
+}
 div.usertable {
   border: 1px solid #1c6ea4;
   width: 100%;
