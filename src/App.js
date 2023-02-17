@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "./data/data";
 import campaign from "./data/campaign"
 import { Login, Voting, Admin } from "./pages";
-import LSM from "./data/LocalStorageManager";
+import LSM from "./utils/LocalStorageManager";
 
 function App() {
   const [pageToDisplay, setPageToDisplay] = useState('Login')
