@@ -41,7 +41,7 @@ const CardsContainer = ({ callPageManager }) => {
     }
     if (modalActive) {
         return (
-            <Modal content={`Thank you for your participation ${user.name}, you can still change your vote or confirm and logout`}>
+            <Modal content={`Thank you for your participation ${user.name}, you can still change your vote or ${user.type === 'user' ? 'confirm and logout' : 'continue to admin panel'}`}>
                 <Button content={'Re-vote'} onClick={() => modalHandler(null, 'revote')}></Button>
                 <Button content={user.type === 'user' ? 'Confirm & log out' : 'To admin panel'} onClick={() => modalHandler(null, 'logout')}></Button>
             </Modal>

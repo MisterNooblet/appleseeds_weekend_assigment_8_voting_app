@@ -19,7 +19,7 @@ const UsersTable = () => {
                     {
                         users.map((element, idx) => {
                             return (
-                                <div key={idx} className={styles.divTableRow}>
+                                <div key={idx} className={`${styles.divTableRow} ${element.voted ? styles.voted : styles.default}`}>
                                     <div className={styles.divTableCell}>{element.name}</div>
                                     <div className={styles.divTableCell}>{element.email}</div>
                                     <div className={styles.divTableCell}>{element.voted ? <FcCheckmark /> : <FcHighPriority />}</div>

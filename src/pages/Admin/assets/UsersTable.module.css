@@ -6,15 +6,13 @@ div.usertable {
 }
 .divTable.usertable .divTableCell,
 .divTable.usertable .divTableHead {
-  border: 1px solid #aaaaaa;
+  border: 1px solid #8f8b8b;
   padding: 3px 2px;
 }
 .divTable.usertable .divTableBody .divTableCell {
   font-size: 13px;
 }
-.divTable.usertable .divTableRow:nth-child(even) {
-  background: #d0e4f5;
-}
+
 .divTable.usertable .divTableHeading {
   background: #1c6ea4;
   background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1c6ea4 100%);
@@ -31,31 +29,24 @@ div.usertable {
   font-size: 15px;
   font-weight: bold;
   color: #ffffff;
-  border-left: 2px solid #d0e4f5;
+  border-left: 2px solid #888787;
 }
 .divTable.usertable .divTableHeading .divTableHead:first-child {
   border-left: none;
 }
-
+.voted .divTableCell {
+  background: #a6fa96 !important;
+}
+.default {
+  background: #ffd4bb !important;
+}
 .usertable .tableFootStyle {
   font-size: 14px;
 }
 .usertable .tableFootStyle .links {
   text-align: right;
 }
-.usertable .tableFootStyle .links a {
-  display: inline-block;
-  background: #1c6ea4;
-  color: #ffffff;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
-.usertable.outerTableFooter {
-  border-top: none;
-}
-.usertable.outerTableFooter .tableFootStyle {
-  padding: 3px 5px;
-}
+
 /* DivTable.com */
 .divTable {
   display: table;
@@ -73,9 +64,7 @@ div.usertable {
 .divTableHeading {
   display: table-header-group;
 }
-.divTableFoot {
-  display: table-footer-group;
-}
+
 .divTableBody {
   display: table-row-group;
 }
