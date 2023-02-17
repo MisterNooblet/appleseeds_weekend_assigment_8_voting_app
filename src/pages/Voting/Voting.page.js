@@ -1,10 +1,10 @@
 import React from 'react'
 import CardsContainer from './components/CardsContainer'
 import Wrapper from '../../components/PageWrapperCol'
-const Voting = () => {
+const Voting = ({ pageManager }) => {
     return (
         <Wrapper>
-            <CardsContainer />
+            <CardsContainer callPageManager={pageManager} />
         </Wrapper>
     )
 }

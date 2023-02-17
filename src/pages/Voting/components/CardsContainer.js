@@ -5,23 +5,21 @@ import LSM from '../../../utils/LocalStorageManager'
 import Modal from '../../../components/Modal/Modal'
 import Button from '../../../components/Button/Button'
 
-const CardsContainer = () => {
+const CardsContainer = ({ callPageManager }) => {
     const parties = LSM.pull('parties')
     const user = LSM.pull('user')
     const [votes, setVotes] = useState(parties)
     const [modalActive, setModalActive] = useState(false)
-    LSM.push('votes', votes)
+    LSM.push('parties', votes)
     const voteHandler = (name) => {
-        // eslint-disable-next-line
         LSM.push('tempvote', votes)
-        setVotes(votes.map(element => element.name === name ? { ...element, ['votes']: element['votes'] + 1 } : element))
+        setVotes(() => LSM.updateVotes(name))
     }
     const modalHandler = (name, action) => {
         if (action === 'vote' && !user.voted) {
             user.voted = true
             LSM.push('user', user)
             setTimeout(() => { setModalActive(true) }, 2000)
-
             voteHandler(name)
         } else if (action === 'revote') {
             const previousState = LSM.pull('tempvote')
@@ -29,13 +27,16 @@ const CardsContainer = () => {
             LSM.push('user', user)
             setModalActive(false)
             setVotes(previousState)
+        } else if (action === 'logout' && user.type === 'user') {
+            LSM.logout()
+            callPageManager('Login')
         }
     }
     if (modalActive) {
         return (
             <Modal content={`Thank you for your participation ${user.name}, you can still change your vote or confirm and logout`}>
                 <Button content={'Re-vote'} onClick={() => modalHandler(null, 'revote')}></Button>
-                <Button content={'Confirm & log out'}></Button>
+                <Button content={'Confirm & log out'} onClick={() => modalHandler(null, 'logout')}></Button>
             </Modal>
         )
     } else if (!modalActive) {
