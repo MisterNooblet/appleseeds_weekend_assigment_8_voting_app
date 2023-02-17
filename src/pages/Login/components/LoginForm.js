@@ -4,6 +4,7 @@ import logoimg from './assets/logo.png'
 import Input from './Input'
 import Button from '../../../components/Button/Button'
 import LSM from '../../../utils/LocalStorageManager'
+import { validateEmail } from '../../../utils/EmailValidator'
 import Modal from '../../../components/Modal/Modal'
 
 
@@ -17,25 +18,42 @@ const LoginForm = ({ callPageManager }) => {
     const [emailFailed, setEmailFailed] = useState(false)
     const [passwordFailed, setPasswordFailed] = useState(false)
     const [showModal, setShowModal] = useState(false)
-    const [modalMsg, setModalMsg] = useState('')
+    const [modalMsg, setModalMsg] = useState(['hi', 'hello'])
     const users = LSM.pull('users')
 
 
     const handleLoginInput = (e, name) => {
         const value = e.target.value
         setLoginInput({ ...loginInput, [name]: value })
+        setEmailFailed(false)
+        setPasswordFailed(false)
     }
 
     const handleLoginButton = () => {
-        const username = loginInput.email
+        const email = loginInput.email
         const password = loginInput.password
-        const user = users.find(element => element.email === username && element.password === password)
-        if (user) {
-            LSM.push('user', user)
+        const validMail = users.find(element => element.email === email)
+        const emailMsg = 'Please include an @ in the email address as well as a domain following it'
+        const wrongEmailMsg = 'The email you have entered does not exist in our database please check your input'
+        const wrongPasswordMsg = 'The password you have entered is incorrect please try again'
+        if (validMail && validMail.password === password) {
+            LSM.push('user', validMail)
             callPageManager('Voting')
         } else {
-            setShowModal(true)
-
+            const emailError = validateEmail(email)
+            if (emailError) {
+                setShowModal(true)
+                setModalMsg(emailMsg)
+                setEmailFailed(true)
+            } else if (!validMail) {
+                setShowModal(true)
+                setModalMsg(wrongEmailMsg)
+                setEmailFailed(true)
+            } else if (validMail && validMail.password !== password) {
+                setShowModal(true)
+                setModalMsg(wrongPasswordMsg)
+                setPasswordFailed(true)
+            }
         }
 
     }
