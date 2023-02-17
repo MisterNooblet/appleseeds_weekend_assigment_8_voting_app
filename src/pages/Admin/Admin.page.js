@@ -1,8 +1,15 @@
 import React from 'react'
-
+import Wrapper from '../../components/PageWrapperCol'
+import LSM from '../../utils/LocalStorageManager'
+import AdminTitle from './components/AdminTitle'
+import TotalVotes from './components/TotalVotes'
 const Admin = () => {
+    const user = LSM.pull('user')
     return (
-        <div>Admin</div>
+        <Wrapper>
+            <AdminTitle name={user.name} />
+            <TotalVotes />
+        </Wrapper>
     )
 }
 

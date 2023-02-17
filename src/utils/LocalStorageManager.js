@@ -23,6 +23,16 @@ const LSM = {
         this.push('users', result)
         this.remove('tempvote')
         this.remove('user')
+    },
+    votes(operation) {
+        let totalVotes = localStorage.getItem('totalVotes')
+        if (operation === 'add') {
+            totalVotes++
+            localStorage.setItem('totalVotes', totalVotes)
+        } else {
+            totalVotes--
+            localStorage.setItem('totalVotes', totalVotes)
+        }
     }
 
 }

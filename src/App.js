@@ -6,6 +6,7 @@ import LSM from "./utils/LocalStorageManager";
 
 LSM.push('users', data)
 LSM.push('parties', campaign)
+localStorage.setItem('totalVotes', 0)
 function App() {
   const [pageToDisplay, setPageToDisplay] = useState('Login')
   const pageManager = (page) => {

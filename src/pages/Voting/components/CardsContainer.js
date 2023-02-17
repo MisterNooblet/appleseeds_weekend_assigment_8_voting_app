@@ -12,6 +12,7 @@ const CardsContainer = ({ callPageManager }) => {
     const [modalActive, setModalActive] = useState(false)
     LSM.push('parties', votes)
     const voteHandler = (name) => {
+        LSM.votes('add')
         LSM.push('tempvote', votes)
         setVotes(() => LSM.updateVotes(name))
     }
@@ -25,18 +26,24 @@ const CardsContainer = ({ callPageManager }) => {
             const previousState = LSM.pull('tempvote')
             user.voted = false
             LSM.push('user', user)
+            LSM.votes('sub')
             setModalActive(false)
             setVotes(previousState)
-        } else if (action === 'logout' && user.type === 'user') {
-            LSM.logout()
-            callPageManager('Login')
+        } else if (action === 'logout') {
+            if (user.type === 'user') {
+                LSM.logout()
+                callPageManager('Login')
+            } else {
+                LSM.remove('tempvote')
+                callPageManager('Admin')
+            }
         }
     }
     if (modalActive) {
         return (
             <Modal content={`Thank you for your participation ${user.name}, you can still change your vote or confirm and logout`}>
                 <Button content={'Re-vote'} onClick={() => modalHandler(null, 'revote')}></Button>
-                <Button content={'Confirm & log out'} onClick={() => modalHandler(null, 'logout')}></Button>
+                <Button content={user.type === 'user' ? 'Confirm & log out' : 'To admin panel'} onClick={() => modalHandler(null, 'logout')}></Button>
             </Modal>
         )
     } else if (!modalActive) {
