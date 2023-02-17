@@ -1,6 +1,6 @@
 import React from 'react'
-import LoginForm from '../components/LoginComponents/LoginForm'
-import Wrapper from '../components/UtilityComponents/PageWrapperCol'
+import LoginForm from './components/LoginForm'
+import Wrapper from '../../components/PageWrapperCol'
 
 const Login = ({ pageManager }) => {
     const callPageManager = (page) => {

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import styles from './assets/styles/LoginForm.module.css'
-import logoimg from './assets/images/logo.png'
+import styles from './assets/LoginForm.module.css'
+import logoimg from './assets/logo.png'
 import Input from './Input'
+import Button from '../../../components/Button/Button'
 
 const users = JSON.parse(localStorage.getItem('users'))
 
@@ -39,7 +40,7 @@ const LoginForm = ({ callPageManager }) => {
             <h1>Login:</h1>
             <Input type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={loginFailed} />
             <Input type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} loginFailed={loginFailed} />
-            <button onClick={handleLoginButton}>Login</button>
+            <Button onClick={handleLoginButton} content='Login' />
             {loginFailed ? <h4 className={styles.error_msg}>Login Failed check your login details</h4> : undefined}
         </div>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
-import CardsContainer from '../components/VotingComponents/CardsContainer'
-import Wrapper from '../components/UtilityComponents/PageWrapperCol'
+import CardsContainer from './components/CardsContainer'
+import Wrapper from '../../components/PageWrapperCol'
 const Voting = () => {
     return (
         <Wrapper>

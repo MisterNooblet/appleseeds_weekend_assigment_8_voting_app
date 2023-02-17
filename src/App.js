@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import data from "./data";
-import campaign from "./campaign"
+import data from "./data/data";
+import campaign from "./data/campaign"
 import { Login, Voting, Admin } from "./pages";
 
 localStorage.setItem('users', JSON.stringify(data))

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './assets/styles/Input.module.css'
+import styles from './assets/Input.module.css'
 import { CiMail, CiLock } from 'react-icons/ci';
 
 
