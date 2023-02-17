@@ -5,6 +5,9 @@ const LSM = {
     pull(item) {
         return JSON.parse(localStorage.getItem(item))
     },
+    remove(item) {
+        localStorage.removeItem(item)
+    },
     updateVotes(name) {
         let votes = this.pull('parties')
         // eslint-disable-next-line
@@ -18,6 +21,8 @@ const LSM = {
         // eslint-disable-next-line
         const result = users.map(element => element.name === currentUser.name ? { ...element, ['voted']: currentUser['voted'] } : element)
         this.push('users', result)
+        this.remove('tempvote')
+        this.remove('user')
     }
 
 }

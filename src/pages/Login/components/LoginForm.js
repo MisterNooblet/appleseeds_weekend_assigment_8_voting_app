@@ -36,9 +36,15 @@ const LoginForm = ({ callPageManager }) => {
         const emailMsg = 'Please include an @ in the email address as well as a domain following it'
         const wrongEmailMsg = 'The email you have entered does not exist in our database please check your input'
         const wrongPasswordMsg = 'The password you have entered is incorrect please try again'
+        const votedMsg = 'Seems like you have already voted.. that wouldnt be fair to vote twice now would it?'
         if (validMail && validMail.password === password) {
-            LSM.push('user', validMail)
-            callPageManager('Voting')
+            if (validMail.voted) {
+                setShowModal(true)
+                setModalMsg(votedMsg)
+            } else {
+                LSM.push('user', validMail)
+                callPageManager('Voting')
+            }
         } else {
             const emailError = validateEmail(email)
             if (emailError) {
