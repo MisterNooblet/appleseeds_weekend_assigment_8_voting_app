@@ -34,7 +34,7 @@ const CardsContainer = ({ callPageManager }) => {
                 LSM.logout()
                 callPageManager('Login')
             } else {
-                LSM.remove('tempvote')
+                LSM.logout('admin')
                 callPageManager('Admin')
             }
         }

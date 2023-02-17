@@ -15,15 +15,16 @@ const LSM = {
         this.push('parties', result)
         return result
     },
-    logout() {
+    logout(type) {
         const users = this.pull('users')
         const currentUser = this.pull('user')
         // eslint-disable-next-line
         const result = users.map(element => element.name === currentUser.name ? { ...element, ['voted']: currentUser['voted'] } : element)
         this.push('users', result)
         this.remove('tempvote')
-        this.remove('user')
+        type !== 'admin' && this.remove('user')
     },
+
     votes(operation) {
         let totalVotes = localStorage.getItem('totalVotes')
         if (operation === 'add') {
