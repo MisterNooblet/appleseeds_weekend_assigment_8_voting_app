@@ -2,9 +2,9 @@ const users = [
     {
         id: "7hZ2Q8cE7V",
         name: 'Tomas Smith',
-        password: '',
-        type: 'admin',
-        email: '',
+        password: '9YSLDWL',
+        type: 'user',
+        email: 'tomas19@aol.com',
         voted: false
     },
     {
