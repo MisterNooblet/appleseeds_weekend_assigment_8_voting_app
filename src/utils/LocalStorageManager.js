@@ -34,7 +34,21 @@ const LSM = {
             totalVotes--
             localStorage.setItem('totalVotes', totalVotes)
         }
+    },
+    addUser(name, email, password) {
+        const users = this.pull('users')
+        const newUser = {
+            id: `${Math.random()}`,
+            name: name,
+            email: email,
+            password: password,
+            type: 'user',
+            voted: false,
+        }
+        users.push(newUser)
+        this.push('users', users)
     }
+
 
 }
 export default LSM

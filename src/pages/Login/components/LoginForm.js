@@ -6,6 +6,7 @@ import Button from '../../../components/Button/Button'
 import LSM from '../../../utils/LocalStorageManager'
 import { validateEmail } from '../../../utils/EmailValidator'
 import Modal from '../../../components/Modal/Modal'
+import RegisterForm from './RegisterForm'
 
 
 const initialLoginState = {
@@ -19,6 +20,7 @@ const LoginForm = ({ callPageManager }) => {
     const [passwordFailed, setPasswordFailed] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const [modalMsg, setModalMsg] = useState(['hi', 'hello'])
+    const [isSigningUp, setIsSigningUp] = useState(false)
     const users = LSM.pull('users')
 
 
@@ -65,7 +67,7 @@ const LoginForm = ({ callPageManager }) => {
     }
     if (showModal) {
         return <Modal content={modalMsg}> <Button onClick={() => setShowModal(false)} content='Retry' /></Modal>
-    } else {
+    } else if (!isSigningUp) {
         return (
             <div className={styles.loginCard}>
                 <img src={logoimg} alt='Logo'></img>
@@ -79,9 +81,30 @@ const LoginForm = ({ callPageManager }) => {
 
                 <div className={styles.buttonbox}>
                     <Button onClick={handleLoginButton} content='LOG IN' />
+                    <Button onClick={() => setIsSigningUp(true)} content='SIGN UP' />
                 </div>
             </div>
         )
+    } else if (isSigningUp) {
+        return <RegisterForm setIsSigningUp={setIsSigningUp} />
+        // return (
+        //     <div className={styles.loginCard}>
+        //         <img src={logoimg} alt='Logo'></img>
+        //         <div>
+
+        //             <h3>Please fill in all fields below</h3>
+        //         </div>
+
+        //         <Input placeholder={'john doe'} type={'text'} name={'name'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={emailFailed} />
+        //         <Input placeholder={'example@domain.com'} type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={emailFailed} />
+        //         <Input placeholder={'password'} type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} loginFailed={passwordFailed} />
+
+        //         <div className={styles.buttonbox}>
+        //             <Button onClick={handleLoginButton} content='GO BACK' />
+        //             <Button onClick={handleLoginButton} content='CONFIRM' />
+        //         </div>
+        //     </div>
+        // )
     }
 
 }
