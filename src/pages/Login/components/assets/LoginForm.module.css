@@ -7,7 +7,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  padding: 5vh 1vw;
+  padding: 5vh 5vw;
 }
 .buttonbox {
   width: 100%;
@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 768px) {
   .loginCard {
-    width: fit-content;
+    width: 348px;
     height: 80vh;
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
