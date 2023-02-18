@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# AppleSeeds Weekend Assigment 8 - ReactJS Voting Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web app mocks a voting campaign and lets a user register/login and vote for a chosen party , after the vote has been made the user is asked to confirm the vote and log out or realocate their vote.
 
-## Available Scripts
+The project was built in React and uses mockdata located in src/data as initial data stores it in localStorage using LocalStoraManager located in src/utils and works with localstorage through out the whole experience , please note the data resets at refresh to its initial state.
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+https://ar-voting-app.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Registration and login.
+- Admin panel providing campaign statistics
+- LocalStorageManager(LSM) does all operations related to managing application data.
 
-### `npm test`
+## Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`react-icons`
 
-### `npm run build`
+## Project Development Roadmap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Functionality:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Basic structure of the application (Folders,Utilities,Pages)
+- Pushing data to localStorage
+- Basic user login and page switch
+- Basic voting page with vote functionality
+- A more complex login verification also checking if the user has already voted
+- Data preservation on user log-out
+- Admin page with statistics
+- A sign up option with checks and conditions as well
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Design:
 
-### `npm run eject`
+- Basic styling the mobile first way
+- Advanced styling with css.modules
+- Final styling
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Performance:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- LocalStorageManager to control all data related operations
+- Dividing global pattern's to global components (buttons / modals)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### User Experience:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Make application responsive for big screen devices
 
-## Learn More
+### Documentation:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Add readme to the repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Lessons Learned
 
-### Code Splitting
+- Building a react folder structure which is easy to manage and go through
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Various login/signup checks vs user database
 
-### Analyzing the Bundle Size
+- The importance and comfortability of recycling small components across multiple sections of the app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
+- [@MisterNooblet](https://www.github.com/MisterNooblet)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 About Me
 
-### Advanced Configuration
+I'm a full stack development student.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Getting Started
 
-### Deployment
+To get started with the project, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Clone the repository:
 
-### `npm run build` fails to minify
+```bash
+git clone https://github.com/MisterNooblet/appleseeds_weekend_assigment_8_voting_app.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+The app will be served at http://localhost:3000/.
+
+## PS
+
+Feel free to use the code and don't forget to Star ⭐ the repository.
