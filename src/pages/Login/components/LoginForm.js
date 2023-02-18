@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import styles from './assets/LoginForm.module.css'
 import logoimg from './assets/logo.png'
 import Input from './Input'
-import Button from '../../../components/Button/Button'
-import LSM from '../../../utils/LocalStorageManager'
-import { validateEmail } from '../../../utils/EmailValidator'
-import Modal from '../../../components/Modal/Modal'
+import Button from 'components/Button/Button'
+import LSM from 'utils/LocalStorageManager'
+import { validateEmail } from 'utils/EmailValidator'
+import { Modal } from 'components'
 import RegisterForm from './RegisterForm'
 
 
@@ -87,24 +87,6 @@ const LoginForm = ({ callPageManager }) => {
         )
     } else if (isSigningUp) {
         return <RegisterForm setIsSigningUp={setIsSigningUp} />
-        // return (
-        //     <div className={styles.loginCard}>
-        //         <img src={logoimg} alt='Logo'></img>
-        //         <div>
-
-        //             <h3>Please fill in all fields below</h3>
-        //         </div>
-
-        //         <Input placeholder={'john doe'} type={'text'} name={'name'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={emailFailed} />
-        //         <Input placeholder={'example@domain.com'} type={'email'} name={'email'} inputHandler={handleLoginInput} value={loginInput.email} loginFailed={emailFailed} />
-        //         <Input placeholder={'password'} type={'password'} name={'password'} inputHandler={handleLoginInput} value={loginInput.password} loginFailed={passwordFailed} />
-
-        //         <div className={styles.buttonbox}>
-        //             <Button onClick={handleLoginButton} content='GO BACK' />
-        //             <Button onClick={handleLoginButton} content='CONFIRM' />
-        //         </div>
-        //     </div>
-        // )
     }
 
 }

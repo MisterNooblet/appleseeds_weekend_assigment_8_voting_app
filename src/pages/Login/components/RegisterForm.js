@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import styles from './assets/LoginForm.module.css'
 import logoimg from './assets/logo.png'
 import Input from './Input'
-import Button from '../../../components/Button/Button'
-import LSM from '../../../utils/LocalStorageManager'
-import { validateEmail } from '../../../utils/EmailValidator'
-import Modal from '../../../components/Modal/Modal'
+import Button from 'components/Button/Button'
+import LSM from 'utils/LocalStorageManager'
+import { validateEmail } from 'utils/EmailValidator'
+import Modal from 'components/Modal/Modal'
 
 const initialLoginState = {
     name: '',

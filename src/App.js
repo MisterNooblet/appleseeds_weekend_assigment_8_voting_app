@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import data from "./data/data";
-import campaign from "./data/campaign"
-import { Login, Voting, Admin } from "./pages";
-import LSM from "./utils/LocalStorageManager";
+import data from "data/data";
+import campaign from "data/campaign"
+import { Login, Voting, Admin } from "pages";
+import LSM from "utils/LocalStorageManager";
 
 LSM.push('users', data)
 LSM.push('parties', campaign)

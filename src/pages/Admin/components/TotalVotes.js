@@ -1,5 +1,5 @@
 import React from 'react'
-import LSM from '../../../utils/LocalStorageManager'
+import LSM from 'utils/LocalStorageManager'
 
 const TotalVotes = () => {
     const users = LSM.pull('users')

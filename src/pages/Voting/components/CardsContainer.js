@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Card from './Card'
 import styles from './assets/styles/CardsContainer.module.css'
-import LSM from '../../../utils/LocalStorageManager'
-import Modal from '../../../components/Modal/Modal'
-import Button from '../../../components/Button/Button'
+import LSM from 'utils/LocalStorageManager'
+import Modal from 'components/Modal/Modal'
+import Button from 'components/Button/Button'
 
 const CardsContainer = ({ callPageManager }) => {
     const parties = LSM.pull('parties')

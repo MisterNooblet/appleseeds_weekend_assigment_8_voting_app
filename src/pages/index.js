@@ -1,5 +1,5 @@
-import Login from "./Login/Login.page";
-import Admin from "./Admin/Admin.page";
-import Voting from "./Voting/Voting.page";
+import Login from "pages/Login/Login.page";
+import Admin from "pages/Admin/Admin.page";
+import Voting from "pages/Voting/Voting.page";
 
 export { Login, Admin, Voting }

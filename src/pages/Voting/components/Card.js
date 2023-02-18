@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './assets/styles/Card.module.css'
-import Button from '../../../components/Button/Button'
+import Button from 'components/Button/Button'
 const Card = ({ name, image, votes, modalHandler }) => {
     return (
         <div className={styles.card}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import LSM from '../../../utils/LocalStorageManager'
+import LSM from 'utils/LocalStorageManager'
 import styles from '../assets/UsersTable.module.css'
 import { FcCheckmark, FcHighPriority } from 'react-icons/fc';
 const UsersTable = () => {
