@@ -7,6 +7,7 @@ import LSM from 'utils/LocalStorageManager'
 import { validateEmail } from 'utils/EmailValidator'
 import { Modal } from 'components'
 import RegisterForm from './RegisterForm'
+import { FaGithubAlt } from 'react-icons/fa';
 
 
 const initialLoginState = {
@@ -83,6 +84,8 @@ const LoginForm = ({ callPageManager }) => {
                     <Button onClick={handleLoginButton} content='LOG IN' />
                     <Button onClick={() => setIsSigningUp(true)} content='SIGN UP' />
                 </div>
+                View on Github
+                <a href='https://github.com/MisterNooblet/appleseeds_weekend_assigment_8_voting_app' rel="noreferrer" target='_blank'><FaGithubAlt /></a>
             </div>
         )
     } else if (isSigningUp) {
