@@ -1,5 +1,6 @@
 .table_container {
   overflow: scroll;
+  overflow-x: hidden;
   max-height: 50vh;
   color: black;
 }

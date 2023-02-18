@@ -3,4 +3,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    background: rgb(125, 185, 182);
+    background: linear-gradient(
+      346deg,
+      rgba(125, 185, 182, 1) 0%,
+      rgba(77, 69, 93, 1) 100%,
+      rgba(125, 185, 182, 1) 100%
+    );
+  }
 }

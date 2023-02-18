@@ -1,12 +1,20 @@
 .button {
   border: none;
-  border: 1px solid black;
+  border: 1px solid rgba(110, 110, 110, 0.486);
+
   width: 80%;
   height: fit-content;
   cursor: pointer;
-  background-color: #7db9b6;
+  background-color: #7db9b69f;
   border-radius: 10px;
   padding: 10px 0;
-  color: #4d455d;
+  color: #fff;
   font-weight: bold;
+  transition: 1s ease-in-out;
+}
+
+.button:hover {
+  -webkit-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
+  background-color: #7db9b6;
 }

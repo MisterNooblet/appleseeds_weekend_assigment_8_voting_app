@@ -12,4 +12,20 @@
 }
 .modal button {
   width: 80vw;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 348px;
+    height: 80vh;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+  }
+  .modal button,
+  .modal h1 {
+    width: 320px;
+  }
 }

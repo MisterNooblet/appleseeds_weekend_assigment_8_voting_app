@@ -48,10 +48,12 @@ const CardsContainer = ({ callPageManager }) => {
         )
     } else if (!modalActive) {
         return (
-            <div className={styles.cards_container}>
+            <>
                 <h3>Voter:{user.name}</h3>
-                {votes.map((element, idx) => { return <Card key={idx} name={element.name} image={element.image} votes={element.votes} modalHandler={modalHandler} /> })}
-            </div>
+                <div className={styles.cards_container}>
+                    {votes.map((element, idx) => { return <Card key={idx} name={element.name} image={element.image} votes={element.votes} modalHandler={modalHandler} /> })}
+                </div>
+            </>
         )
 
     }

@@ -9,13 +9,15 @@ const Admin = ({ pageManager }) => {
     const user = LSM.pull('user')
     return (
         <Wrapper>
-            <AdminTitle name={user.name} />
-            <UsersTable />
-            <TotalVotes />
-            <Button content={'LOGOUT'} onClick={() => {
-                LSM.logout()
-                pageManager('Login')
-            }} />
+            <div className='admin_container'>
+                <AdminTitle name={user.name} />
+                <UsersTable />
+                <TotalVotes />
+                <Button content={'LOGOUT'} onClick={() => {
+                    LSM.logout()
+                    pageManager('Login')
+                }} />
+            </div>
         </Wrapper>
     )
 }

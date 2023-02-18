@@ -14,3 +14,48 @@ body {
   margin: 0;
   padding: 0;
 }
+.admin_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .body {
+    background: rgb(125, 185, 182);
+    background: linear-gradient(
+      90deg,
+      rgba(125, 185, 182, 1) 0%,
+      rgba(77, 69, 93, 1) 50%,
+      rgba(125, 185, 182, 1) 100%
+    );
+  }
+  .admin_container {
+    border-radius: 15px;
+    background-color: #4d455d;
+    -webkit-box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.6);
+  }
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #e96479 #4d455d;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #4d455d;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e964788e;
+  border-radius: 10px;
+  border: 3px solid #ffffff02;
+}
