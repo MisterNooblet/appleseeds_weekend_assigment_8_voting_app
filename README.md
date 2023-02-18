@@ -1,8 +1,8 @@
 # AppleSeeds Weekend Assigment 8 - ReactJS Voting Application
 
-This web app mocks a voting campaign and lets a user register/login and vote for a chosen party , after the vote has been made the user is asked to confirm the vote and log out or realocate their vote.
+This web app mocks a voting campaign and lets a user register/login and vote for a chosen party. After the vote has been made, the user is asked to confirm the vote and log out or realocate their vote.
 
-The project was built in React and uses mockdata located in src/data as initial data stores it in localStorage using LocalStoraManager located in src/utils and works with localstorage through out the whole experience , please note the data resets at refresh to its initial state.
+The project was built in React and uses mockdata located in src/data as initial data. Stores it in localStorage using LocalStoraManager located in src/utils and works with localstorage throughout the whole experience. Please note, the data resets at refresh to its initial state.
 
 ## Demo
 
